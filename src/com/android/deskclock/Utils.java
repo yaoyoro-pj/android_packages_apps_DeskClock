@@ -22,6 +22,7 @@ import static android.appwidget.AppWidgetManager.OPTION_APPWIDGET_HOST_CATEGORY;
 import static android.appwidget.AppWidgetProviderInfo.WIDGET_CATEGORY_KEYGUARD;
 import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
+import static android.graphics.Bitmap.Config.ARGB_8888;
 
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
@@ -31,6 +32,8 @@ import android.appwidget.AppWidgetManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -442,6 +445,18 @@ public class Utils {
     }
 
     /**
+     * This method assumes the given {@code view} has already been layed out.
+     *
+     * @return a Bitmap containing an image of the {@code view} at its current size
+     */
+    public static Bitmap createBitmap(View view) {
+        final Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), ARGB_8888);
+        final Canvas canvas = new Canvas(bitmap);
+        view.draw(canvas);
+        return bitmap;
+    }
+
+    /**
      * {@link ArraySet} is @hide prior to {@link Build.VERSION_CODES#M}.
      */
     @SuppressLint("NewApi")
@@ -538,12 +553,10 @@ public class Utils {
         /** Whether or not to always make the view visible to talkback */
         private final boolean mIsAlwaysAccessibilityVisible;
 
-        @SuppressWarnings("unused")
         public ClickAccessibilityDelegate(String label) {
             this(label, false);
         }
 
-        @SuppressWarnings("unused")
         public ClickAccessibilityDelegate(String label, boolean isAlwaysAccessibilityVisible) {
             mLabel = label;
             mIsAlwaysAccessibilityVisible = isAlwaysAccessibilityVisible;

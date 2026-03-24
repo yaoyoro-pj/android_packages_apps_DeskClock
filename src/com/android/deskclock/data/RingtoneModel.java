@@ -81,16 +81,17 @@ final class RingtoneModel {
         mContext.registerReceiver(mLocaleChangedReceiver, localeBroadcastFilter);
     }
 
-    void addCustomRingtone(Uri uri, String title) {
+    CustomRingtone addCustomRingtone(Uri uri, String title) {
         // If the uri is already present in an existing ringtone, do nothing.
         final CustomRingtone existing = getCustomRingtone(uri);
         if (existing != null) {
-            return;
+            return existing;
         }
 
         final CustomRingtone ringtone = CustomRingtoneDAO.addCustomRingtone(mPrefs, uri, title);
         getMutableCustomRingtones().add(ringtone);
         Collections.sort(getMutableCustomRingtones());
+        return ringtone;
     }
 
     void removeCustomRingtone(Uri uri) {

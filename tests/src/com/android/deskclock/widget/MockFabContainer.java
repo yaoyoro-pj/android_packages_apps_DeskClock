@@ -34,9 +34,9 @@ public final class MockFabContainer implements FabContainer {
 
     private final DeskClockFragment deskClockFragment;
 
-    private final ImageView fab;
-    private final ImageView leftButton;
-    private final ImageView rightButton;
+    private ImageView fab;
+    private Button leftButton;
+    private Button rightButton;
 
     public MockFabContainer(DeskClockFragment fragment, Context context) {
         deskClockFragment = fragment;
@@ -46,9 +46,24 @@ public final class MockFabContainer implements FabContainer {
 
         updateFab(FabContainer.FAB_AND_BUTTONS_IMMEDIATE);
 
-        fab.setOnClickListener(view -> deskClockFragment.onFabClick(fab));
-        leftButton.setOnClickListener(view -> deskClockFragment.onLeftButtonClick(leftButton));
-        rightButton.setOnClickListener(view -> deskClockFragment.onRightButtonClick(rightButton));
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deskClockFragment.onFabClick(fab);
+            }
+        });
+        leftButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deskClockFragment.onLeftButtonClick(leftButton);
+            }
+        });
+        rightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deskClockFragment.onRightButtonClick(rightButton);
+            }
+        });
     }
 
     @Override

@@ -19,11 +19,16 @@ package com.android.deskclock.timer;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.deskclock.LabelDialogFragment;
 import com.android.deskclock.R;
 import com.android.deskclock.data.DataModel;
 import com.android.deskclock.data.Timer;
@@ -33,8 +38,8 @@ import com.android.deskclock.events.Events;
 public class TimerViewHolder extends RecyclerView.ViewHolder {
 
     private int mTimerId;
-    private final TimerItem mTimerItem;
-    private final TimerClickHandler mTimerClickHandler;
+    private TimerItem mTimerItem;
+    private TimerClickHandler mTimerClickHandler;
 
     public TimerViewHolder(View view, TimerClickHandler timerClickHandler) {
         super(view);
@@ -50,8 +55,9 @@ public class TimerViewHolder extends RecyclerView.ViewHolder {
         view.findViewById(R.id.timer_label).setOnClickListener(v ->
                 mTimerClickHandler.onEditLabelClicked(getTimer()));
         view.findViewById(R.id.play_pause).setOnClickListener(mPlayPauseListener);
-        view.findViewById(R.id.close).setOnClickListener(v ->
-                DataModel.getDataModel().removeTimer(getTimer()));
+        view.findViewById(R.id.close).setOnClickListener(v -> {
+            DataModel.getDataModel().removeTimer(getTimer());
+        });
     }
 
     public void onBind(int timerId) {

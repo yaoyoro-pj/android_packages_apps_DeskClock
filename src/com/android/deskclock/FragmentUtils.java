@@ -20,7 +20,6 @@ package com.android.deskclock;
 import android.util.ArrayMap;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentFactory;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -77,9 +76,7 @@ public final class FragmentUtils {
 
         // Otherwise, build the fragment from scratch.
         final String fragmentClassName = tab.getFragmentClassName();
-        FragmentFactory fragmentFactory = mFragmentManager.getFragmentFactory();
-        fragment = (DeskClockFragment) fragmentFactory.instantiate(
-                mDeskClock.getClassLoader(), fragmentClassName);
+        fragment = (DeskClockFragment) Fragment.instantiate(mDeskClock, fragmentClassName);
         fragment.setFabContainer(mDeskClock);
 
         FragmentTransaction transaction = mFragmentManager.beginTransaction();

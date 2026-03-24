@@ -101,7 +101,7 @@ final class StopwatchModel {
     /**
      * @param stopwatch the new state of the stopwatch
      */
-    void setStopwatch(Stopwatch stopwatch) {
+    Stopwatch setStopwatch(Stopwatch stopwatch) {
         final Stopwatch before = getStopwatch();
         if (before != stopwatch) {
             StopwatchDAO.setStopwatch(mPrefs, stopwatch);
@@ -123,7 +123,7 @@ final class StopwatchModel {
             }
         }
 
-        return;
+        return stopwatch;
     }
 
     /**
