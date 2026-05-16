@@ -124,8 +124,7 @@
         app:backgroundTint="?attr/colorTertiary"
         app:tint="?attr/colorOnTertiaryContainer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/space_after_add_one_min"
-        app:materialSizeOverlay="@style/SizeOverlay.Material3Expressive.Button.Medium"/>
+        app:layout_constraintBottom_toTopOf="@id/space_after_add_one_min"/>
 
     <Space
         android:id="@+id/space_after_add_one_min"
@@ -147,7 +146,6 @@
         app:iconPadding="0dp"
         app:layout_constraintStart_toStartOf="@id/add_one_min"
         app:layout_constraintEnd_toEndOf="@id/add_one_min"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:materialSizeOverlay="@style/SizeOverlay.Material3Expressive.Button.Medium"/>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </com.android.deskclock.timer.TimerItem>

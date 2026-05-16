@@ -4,7 +4,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <style name="Theme.DeskClock.DigitalWidgetConfigurationTheme" parent="Theme.Material3Expressive.DynamicColors.DayNight.NoActionBar">
+    <style name="Theme.DeskClock.DigitalWidgetConfigurationTheme" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="appWidgetConfigBackground">?attr/colorSurface</item>
         <item name="appWidgetConfigTitle">?attr/colorOnSurfaceVariant</item>
         <item name="appWidgetConfigSubtitle">?attr/colorSurfaceVariant</item>
