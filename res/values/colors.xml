@@ -30,4 +30,10 @@
 
     <color name="widget_label_color">@color/white</color>
     <color name="widget_label_color_dark">@color/black</color>
+
+    <color name="system_bg">@*android:color/system_accent2_50</color>
+    <color name="analog_appwidget_dial_number_color">@*android:color/background_device_default_dark</color>
+    <color name="analog_appwidget_hour_hand_color">@*android:color/system_accent2_700</color>
+    <color name="analog_appwidget_minute_hand_color">@*android:color/system_accent1_400</color>
+    <color name="analog_appwidget_second_hand_color">@*android:color/system_accent3_600</color>
 </resources>
