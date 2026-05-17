@@ -28,17 +28,4 @@
 	android:hand_minute="@drawable/clock_analog_minute"
 	android:importantForAccessibility="no"
 	android:hand_second="@drawable/clock_analog_second"/>
-<AnalogClock
-	android:theme="@android:style/Theme.DeviceDefault.DayNight"
-	android:id="@+id/date_clock"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:dial="@drawable/empty_dial_drawable"
-	android:hand_hour="@drawable/empty_drawable"
-	android:hand_minute="@drawable/empty_drawable"
-	android:importantForAccessibility="no"
-	android:dialTint="@android:color/transparent"
-	android:hand_hourTint="@android:color/transparent"
-	android:hand_minuteTint="@android:color/transparent"
-	android:hand_secondTint="@android:color/system_accent1_100"/>
 </FrameLayout>
