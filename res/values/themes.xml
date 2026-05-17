@@ -57,7 +57,7 @@
     <style name="Widget.DeskClock.FloatingActionButton"
         parent="Widget.Material3.FloatingActionButton.Primary">
         <item name="shapeAppearanceOverlay">
-            @style/ShapeAppearance.Material3.Corner.Full
+            @style/ShapeAppearance.Material3.Corner.ExtraLarge
         </item>
     </style>
 </resources>
