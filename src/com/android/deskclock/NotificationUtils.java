@@ -62,7 +62,7 @@ public class NotificationUtils {
     /**
      * Notification channel containing all stopwatch notifications.
      */
-    public static final String STOPWATCH_NOTIFICATION_CHANNEL_ID = "StopWatchSilentNotification";
+    public static final String STOPWATCH_NOTIFICATION_CHANNEL_ID = "StopWatchNotification";
 
     /**
      * Values used to bitmask certain channel defaults
@@ -92,8 +92,7 @@ public class NotificationUtils {
         });
         CHANNEL_PROPS.put(STOPWATCH_NOTIFICATION_CHANNEL_ID, new int[]{
                 R.string.stopwatch_channel,
-                IMPORTANCE_DEFAULT,
-                0
+                IMPORTANCE_DEFAULT
         });
         CHANNEL_PROPS.put(TIMER_MODEL_NOTIFICATION_CHANNEL_ID, new int[]{
                 R.string.timer_channel,
@@ -153,7 +152,6 @@ public class NotificationUtils {
         deleteChannel(nm, "alarmSnoozingNotification");
         deleteChannel(nm, "timerNotification");
         deleteChannel(nm, "stopwatchNotification");
-        deleteChannel(nm, "StopWatchNotification");
 
         // We recreate all existing channels so any language change or our name changes propagate
         // to the actual channels
